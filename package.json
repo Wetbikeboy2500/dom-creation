@@ -1,0 +1,11 @@
+{
+  "name": "dom-creation",
+  "version": "1.0.0",
+  "description": "Build DOM easily and quickly from Vanilla JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wetbikeboy2500",
+  "license": "ISC"
+}
