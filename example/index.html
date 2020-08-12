@@ -14,11 +14,12 @@
                 elem.add('p').t(data).f()
             }).ap(document.body);
 
-            element('div').add('p').t('Adding a paragraph to a div is easy!').f().ap(document.body);
+            const d = element('div').add('p').t('Adding a paragraph to a div is easy!').f().ap(document.body);
+            d.add('p').t('This is another test').f();
 
             const p = document.createElement('p');
-            p.appendChild(document.createTextNode('Hello World'));
-            element('div').addDom(p).ap(document.body);
+            p.appendChild(document.createTextNode('Hello World!'));
+            element('div').addDom(p).preap(document.body);
         </script>
     </body>
 

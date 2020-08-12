@@ -69,6 +69,14 @@ class _element {
         return this;
     }
     /**
+     * Preappends current element to given DOM element
+     * @param {object} dom DOM element that this element will be preappended to
+     */
+    preap(dom) {
+        dom.insertBefore(this.dom, dom.firstChild);
+        return this;
+    }
+    /**
      * Adds an element to current element
      * @param {string} name The element's name
      * @param {string} ns Namespace if needed for that element
