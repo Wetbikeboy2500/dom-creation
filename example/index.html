@@ -1,0 +1,17 @@
+<html>
+    <head>
+    <head>
+    <body>
+        <script type="module">
+            import element from '../index.js';
+
+            const arr = ['hello', 'there', 'world'];
+
+            element().each(arr, (elem, data) => {
+                elem.add('p').t(data).f()
+            }).ap(document.body);
+
+            element('div').add('p').t('Adding a paragraph to a div is easy!').f().ap(document.body);
+        </script>
+    </body>
+</html>

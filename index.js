@@ -1,17 +1,15 @@
-module.exports = element;
-
 /**
  * Creates an element
  * @param {string} name Name of the DOM to be created
  * @param {string} ns Namespace, if any, that the element needs to be created
  */
-function element(name, ns) {
-    return new _element(name, ns, new _element());
+export default function element(name, ns) {
+    if (name) {
+        return new _element(name, ns, new _element());
+    } else {
+        return new _element();
+    }
 }
-
-
-//used as reference to determine if the pointer is a document fragment
-const _fragmentConstructor = document.createDocumentFragment().constructor;
 
 class _element {
     constructor(name, ns = null, pointer) {
@@ -63,12 +61,20 @@ class _element {
         return this;
     }
     /**
+     * Appends current element to given DOM element
+     * @param {object} dom DOM element that this element will be appended to
+     */
+    ap(dom) {
+        dom.appendChild(this.dom);
+        return this;
+    }
+    /**
      * Adds an element to current element
      * @param {string} name The element's name
      * @param {string} ns Namespace if needed for that element
      */
     add(name, ns = null) {
-        return element(name, ns, this);
+        return new _element(name, ns, this);
     }
     /**
      * Adds a dom element to current element
@@ -83,11 +89,11 @@ class _element {
      * This will only work if the element is not on the top level
      */
     f() {
-        if (this.pointer == null) {
+        if (this.pointer === null) {
             console.warn('Called .f() on a top level element');
             return this;
         } else {
-            this.pointer.append(this);
+            this.pointer.dom.appendChild(this.dom);
             return this.pointer;
         }
     }
@@ -112,7 +118,6 @@ class _element {
                 }
             }
         }
-
         return this;
     }
 }
