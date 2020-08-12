@@ -1,6 +1,9 @@
 <html>
+
+<head>
+
     <head>
-    <head>
+
     <body>
         <script type="module">
             import element from '../index.js';
@@ -12,6 +15,11 @@
             }).ap(document.body);
 
             element('div').add('p').t('Adding a paragraph to a div is easy!').f().ap(document.body);
+
+            const p = document.createElement('p');
+            p.appendChild(document.createTextNode('Hello World'));
+            element('div').addDom(p).ap(document.body);
         </script>
     </body>
+
 </html>
