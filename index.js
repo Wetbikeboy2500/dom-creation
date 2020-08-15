@@ -77,6 +77,14 @@ class _element {
         return this;
     }
     /**
+     * Appends after current DOM element as a sibling of it
+     * @param {object} dom DOM element that this element added after
+     */
+    aftap(dom) {
+        dom.parentElement.insertBefore(this.dom, dom.nextSibling);
+        return this;
+    }
+    /**
      * Adds an element to current element
      * @param {string} name The element's name
      * @param {string} ns Namespace if needed for that element

@@ -54,5 +54,11 @@ p.appendChild(document.createTextNode('Hello World'));
 element('div').addDom(p).ap(document.body);
 ```
 
+There are three ways to append an element that all take a DOM element as an argument
 
-
+```javascript
+const dom = document.body;
+element().ap(dom); //appends the element to DOM object
+element().preap(dom); //prepends the element to DOM object which adds the child to top of DOM object's children
+element().aftap(dom); //appends the element after another DOM object as a sibling of the DOM
+```

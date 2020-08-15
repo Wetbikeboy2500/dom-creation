@@ -19,7 +19,9 @@
 
             const p = document.createElement('p');
             p.appendChild(document.createTextNode('Hello World!'));
-            element('div').addDom(p).preap(document.body);
+            const c = element('div').addDom(p).preap(document.body);
+
+            element('p').t('Added after').f().aftap(c.dom);
         </script>
     </body>
 
