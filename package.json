@@ -1,6 +1,6 @@
 {
   "name": "dom-creation",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Build DOM easily and quickly from Vanilla JS",
   "main": "index.js",
   "scripts": {

@@ -62,3 +62,16 @@ element().ap(dom); //appends the element to DOM object
 element().preap(dom); //prepends the element to DOM object which adds the child to top of DOM object's children
 element().aftap(dom); //appends the element after another DOM object as a sibling of the DOM
 ```
+
+Instead of:
+
+```javascript
+element('div').add('span').add('p').t('Nested').f().f().f().ap(document.body);
+```
+
+You can do:
+
+```javascript
+element('div').add('span').add('p').t('Nested').close().ap(document.body);
+```
+The .close() will add all elements to each other all the way up to the top of the tree. You can still add more elements, but they will be built in a new DOM tree.

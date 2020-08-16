@@ -105,12 +105,23 @@ class _element {
      * This will only work if the element is not on the top level
      */
     f() {
-        if (this.pointer === null) {
+        if (this.pointer == null) {
             console.warn('Called .f() on a top level element');
             return this;
         } else {
             this.pointer.dom.appendChild(this.dom);
             return this.pointer;
+        }
+    }
+    /**
+     * Cloes all elements up to the top layer
+     */
+    close() {
+        if (this.pointer) {
+            this.pointer.dom.appendChild(this.dom);
+            return this.pointer.close();
+        } else {
+            return this;
         }
     }
     /**
