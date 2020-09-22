@@ -1,11 +1,12 @@
 {
-  "name": "dom-creation",
-  "version": "1.2.1",
+  "name": "@wetbikeboy2500/dom-creation",
+  "version": "1.3.1",
   "description": "Build DOM easily and quickly from Vanilla JS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "author": "Wetbikeboy2500",
   "license": "MIT"
 }

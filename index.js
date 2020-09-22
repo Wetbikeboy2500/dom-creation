@@ -29,23 +29,28 @@ class _element {
     }
     /**
      * Accepts a name/value or a json object to create the dom's attributes
+     * By passing false as an attribute, it will not attempt to set the attribute for the DOM
      * @param {*} name-or-json
-     * @param {string} value 
+     * @param {string} value
      */
     a(name, value = '') {
         if (name.constructor === {}.constructor) {
             for (const a in name) {
-                this.dom.setAttribute(a, name[a]);
+                if (name[a] !== false) {
+                    this.dom.setAttribute(a, name[a]);
+                }
             }
         } else {
-            this.dom.setAttribute(name, value);
+            if (value !== false) {
+                this.dom.setAttribute(name, value);
+            }
         }
 
         return this;
     }
     /**
      * Adds text to dom element
-     * @param {String} text 
+     * @param {String} text
      */
     t(text) {
         this.dom.appendChild(document.createTextNode(text));
