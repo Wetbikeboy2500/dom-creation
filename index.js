@@ -5,8 +5,10 @@
  */
 export default function element(name, ns) {
     if (name) {
+        //builds an element as a child of document fragment
         return new _element(name, ns, new _element());
     } else {
+        //only builds the document fragment
         return new _element();
     }
 }
@@ -150,6 +152,16 @@ class _element {
                 }
             }
         }
+        return this;
+    }
+    /**
+     * Used to run inline logic for creating or appending new dom elements
+     * @param {function} func Function that will be run
+     * The only parameter the function gives is the current element
+     * This can be used to presvers the element reference for any function or event being called
+     */
+    eval(func) {
+        func(this);
         return this;
     }
 }

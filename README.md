@@ -4,9 +4,19 @@ Dom-Creation is a quick and light package for building DOM
 
 ## Setup
 
-```
+```javascript
 import element from 'dom-creation';
 ```
+-or-
+```javascript
+const element = require('dom-creation').default;
+```
+
+Use type="module" if using html script tags to import.
+
+### Documentation
+
+If you would like the most in depth idea of how this works, just check the index.js file. Every method is documented on its function which will give you a good idea of what this is capable of. If you would like to see the code in action, check the examples below or the examples directory for an HTML web page.
 
 ### Examples
 

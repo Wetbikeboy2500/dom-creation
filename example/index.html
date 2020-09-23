@@ -24,6 +24,16 @@
             element('p').t('Added after').f().aftap(c.dom);
 
             element('div').add('span').add('p').t('Nested').close().ap(document.body);
+
+            element('button').t('An event example').e('click', () => {
+                window.alert('You clicked me');
+            }).ap(document.body);
+
+            element('button').t('Element bound to event').eval((elem) => elem.e('click', () => {
+                window.alert('This is a more complex event with the element being very easy to manipulate');
+                elem.a('style', 'color:red');
+            }))
+            .ap(document.body);
         </script>
     </body>
 
